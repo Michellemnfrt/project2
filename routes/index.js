@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 router.get('/artist', (req, res) => {
     res.render('artist/edit')
 })
-router.get('/artist/new', (req, res) => {
+router.get('/songs/new', (req, res) => {
     res.render('artist/new')
 })
 router.get('/songs/', (req, res) => {

@@ -1,7 +1,7 @@
-var mongoose =require('./db/connection')
-schema = mongoose.schema
+const mongoose =require('./db/connections')
+const Schema = mongoose.Schema
 
-var userSchema = new Schema({
+var user = new Schema({
     local: {
         email: String,
         password: String
@@ -9,8 +9,8 @@ var userSchema = new Schema({
       uploads: [
         {
           type: Schema.Types.ObjectId,
-          ref: "Songs"
+          ref: "songs"
         }
     ]
   });
-  module.exports = mongoose.model("User", User);
+  module.exports =  mongoose.model("user", user);

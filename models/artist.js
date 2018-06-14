@@ -1,16 +1,18 @@
-var mongoose =require('./db/connection')
-schema = mongoose.schema
+const mongoose =require('../db/connections')
+const Schema = mongoose.Schema
 
-var artistSchema = new Schema({
+const artist = new Schema({
     artist: {
         name: String,
     },
     title: {
         type: String,
       },
-      Genre:{ 
-          type: string,
+      Genre:[
+          { 
+          type: String,
           enum: ['indie','rock','hip-hop','other']
       }
+    ]
   });
-  module.exports = mongoose.model("Artist", Artist);
+  module.exports = mongoose.model("artist", artist);
