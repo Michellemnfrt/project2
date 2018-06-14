@@ -8,14 +8,14 @@ const router = express.Router()
 router.get('/', (req, res) => {
     res.render('index')
 })
-router.get('/artist', (req, res) => {
-    res.render('artist/edit')
+router.get('/user', (req, res) => {
+    res.render('user/index')
 })
-router.get('/songs/new', (req, res) => {
-    res.render('artist/new')
+router.get('/artist/', (req, res) => {
+    res.render('artist/index')
 })
 router.get('/songs/', (req, res) => {
-    res.render('songs/edit')
+    res.render('songs/index')
 })
 // router.use(require('./artist'))
 
