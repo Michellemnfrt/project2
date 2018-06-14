@@ -1,4 +1,4 @@
-const mongoose =require('./db/connections')
+const mongoose =require('../db/connections')
 const Schema = mongoose.Schema
 
 var user = new Schema({
