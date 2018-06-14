@@ -1,0 +1,5 @@
+// set up controller in terms of what they are send and recieving. 
+// install hardware
+// create buttons
+// create functions for buttons
+// create sample data
