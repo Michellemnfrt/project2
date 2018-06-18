@@ -1,1 +1,8 @@
 <h1> Hello I'm at the songs home page where u at?</h1>
+{{#if songs}}
+  <ul class="songs">
+    {{#each songs}}
+       {{> 'song'}}
+    {{/each}}
+  </ul>
+{{/if}}

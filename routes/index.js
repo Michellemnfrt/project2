@@ -4,6 +4,11 @@ const router = express.Router()
 // const router = require('./routes/artist.js')
 // const router3 = require('./routes/songs.js')
 // const router4 = require('./routes/user.js')
+const applicationController = require('../controllers/index.js');
+
+router.get('/', applicationController.index);
+
+module.exports = router;
 
 router.get('/', (req, res) => {
     res.render('index')

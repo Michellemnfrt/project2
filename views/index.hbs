@@ -1,1 +1,9 @@
-<h1> Ello World</h1>
+<h1> Hello! Welcome To My Music Share Page</h1>
+<p>Please sign-up and explore the site</p>
+{{#if tweets}}
+  <ul class="tweets">
+    {{#each tweets}}
+       {{> 'tweet'}}
+    {{/each}}
+  </ul>
+{{/if}}

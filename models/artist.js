@@ -2,6 +2,7 @@ const mongoose =require('../db/connections')
 const Schema = mongoose.Schema
 
 const artist = new Schema({
+    content: String,
     artist: {
         name: String,
     },
@@ -15,4 +16,6 @@ const artist = new Schema({
       }
     ]
   });
-  module.exports = mongoose.model("artist", artist);
+
+  module.exports = { artist: mongoose.model("artist", artist)
+};
