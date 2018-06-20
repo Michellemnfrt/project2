@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Muzic Sha.ree</title>
     {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> --}}
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
   </head>
   <body>
     <header class="site-header">
@@ -19,8 +19,8 @@
             <li><a href="/user/{{currentUser.id}}">Profile</a></li>
             <li><a href="/user/logout">Log Out</a></li>
           {{else}}
-            <li><a href="/user/login">Log In</a></li>
-            <li><a href="/user/sign-up">Sign Up</a></li>
+            <li><a href="user/login">Log In</a></li>
+            <li><a href="user/sign-up">Sign Up</a></li>
           {{/if}}
           </ul>
         </div>

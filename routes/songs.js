@@ -1,19 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const songsController = require('../controllers/songs.js')
+router.use('/new', songsController.new)
+router.use('/:id', songsController.show)
+router.use('/:id/edit', songsController.edit)
+// router.put('/:id', songsController.update)
 
-router.get('/', (req, res) => {
-    res.send('im an artist')
-})
-router.get('/songs', (req, res) => {
-    res.render('songs/index')
-})
-    router.get('/songs/new', (req, res) => {
-        res.render('songs/new')
-    })
-    router.get('/songs/edit', (req, res) => {
-        res.render('songs/edit')
-    })
-router.get('/songs/show', (req, res) => {
-    res.render('songs/show')
 
-})
+module.exports = router 
+
