@@ -1,11 +1,12 @@
-const express = require('express')
-const router = express.Router()
-const songsController = require('../controllers/songs.js')
-router.use('/new', songsController.new)
-router.use('/:id', songsController.show)
-router.use('/:id/edit', songsController.edit)
-// router.put('/:id', songsController.update)
+const express = require('express');
+const router = express.Router();
+const songsController = require('../controllers/songs.js');
+
+router.get('/new', songsController.new);
+router.get('/:id', songsController.show);
+router.get('/:id/edit', songsController.edit);
+router.put('/:id', songsController.update);
 
 
-module.exports = router 
+module.exports = router;
 

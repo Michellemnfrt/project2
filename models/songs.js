@@ -1,19 +1,19 @@
 const mongoose =require('../db/connections')
 const Schema = mongoose.Schema
 
-const songs = new Schema({
+const Songs = new Schema({
     content: String,
     title: {
-        type: String,
+        type: String
     },  
         artist: {
-        name: String,
+        name: String
       },
-      Genre:[
+      genre:[
           { 
           type: String,
           enum: ['indie','rock','hip-hop','other']
       }
     ]
   });
-  module.exports = mongoose.model("songs", songs);
+  module.exports = mongoose.model("Songs", Songs);

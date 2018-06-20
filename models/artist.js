@@ -1,13 +1,13 @@
 const mongoose =require('../db/connections')
 const Schema = mongoose.Schema
 
-const artist = new Schema({
+const Artist = new Schema({
     content: String,
     artist: {
-        name: String,
+        name: String
     },
     title: {
-        type: String,
+        type: String
       },
       Genre:[
           { 
@@ -16,6 +16,4 @@ const artist = new Schema({
       }
     ]
   });
-
-  module.exports = { artist: mongoose.model("artist", artist)
-};
+  module.exports = mongoose.model("Artist", Artist);
