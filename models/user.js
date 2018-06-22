@@ -5,12 +5,12 @@ const Schema = mongoose.Schema
 const User = new Schema({
     local: {
         email: String,
-        password: String
+        password: String,
       },
-      uploads: [
+      songs: [
         {
           type: Schema.Types.ObjectId,
-          ref: "songs"
+          ref: "Songs"
         }
     ]
   });
@@ -22,3 +22,4 @@ const User = new Schema({
     return bcrypt.compareSync(password, this.local.password);
   };
   module.exports =  mongoose.model("User", User);
+  

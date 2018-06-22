@@ -15,12 +15,12 @@
           <a href="/" class="brand-logo right">Muzic Sha.ree</a>
           <ul class="right">
           {{#if currentUser}}
-            <li><a href="/songs/new">Add a new Song</a></li>
-            <li><a href="/user/{{currentUser.id}}">Profile</a></li>
-            <li><a href="/user/logout">Log Out</a></li>
+            <li><a href="/Songs/new">Add a new Song</a></li>
+            <li><a href="/User/{{currentUser.id}}">Profile</a></li>
+            <li><a href="/User/logout">Log Out</a></li>
           {{else}}
-            <li><a href="user/login">Log In</a></li>
-            <li><a href="user/sign-up">Sign Up</a></li>
+            <li><a href="User/login">Log In</a></li>
+            <li><a href="User/Signup">Sign Up</a></li>
           {{/if}}
           </ul>
         </div>

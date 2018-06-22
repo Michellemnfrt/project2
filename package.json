@@ -4,7 +4,7 @@
   "description": "This app allows users to upload links of music they want to share on their profile.  Users are able to... Create personal profile(login) Upload music Edit Music Classify music by artists View other profiles Comment on songs Download music from other profiles.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,14 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "flash": "^1.1.0",
+    "handlebars": "^4.0.11",
     "hbs": "^4.0.1",
     "method-override": "^2.3.10",
     "methods": "^1.1.2",
     "mongodb": "^3.0.10",
     "mongoose": "^5.1.5",
     "passport": "^0.4.0",
-    "passport-local-mongoose": "^5.0.0",
+    "passport-local-mongoose": "^5.0.1",
     "passport-strategy": "^1.0.0"
   },
   "devDependencies": {}

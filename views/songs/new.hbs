@@ -1,17 +1,19 @@
+
+<section class="row">
+   {{#if message}}
+    <p class="alert">{{message}}</p>
+  {{/if}}
+
 <h1> Hello I'm at the new songs page where u at?</h1>
-{{!-- {{#if currentUser}}
-<div class="card">
-  <div class="card-content">
-    <h4 class="card-title">Upload a new song:</h6>
-    <form method="POST" action="/song/{{id}}?_method=PUT" class="row">
-      <p class="input-field inline col s10">
-        <label for="content"></label>
-        <input type="text" name="content" id="">
-      </p>
-      <p class="input-field inline col s2">
-        <input class="btn" type="submit" value="Submit">
-      </p>
-    </form>
-  </div>
-</div>
-{{/if }} --}}
+  <form action="/" method="post" class="auth-form">
+    <p class="input-field">
+      <input type="email" name="email" placeholder="Email">
+    </p>
+    <p class="input-field">
+      <input type="password" name="password" placeholder="Password">
+    </p>
+    <p class="input-field">
+      <input type="submit" value="Log In" class="btn waves-effect waves-light">
+    </p>
+  </form>
+</section>

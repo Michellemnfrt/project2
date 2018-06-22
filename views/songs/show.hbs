@@ -1,10 +1,9 @@
 <h1> Hello I'm at the update songs page where u at?</h1>
-{{!-- <p class="card">
-  {{> 'playlist'}}
-</p> --}}
-{{!-- 
+<p class="card">
+  {{> 'songs'}}
+</p> 
 {{#if songs.length}}
-  {{#each songs}}
+  {{#each song}}
     <div class="card">
       <div class="card-content">
         <span class="card-title">
@@ -12,9 +11,9 @@
         </span>
       </div>
       <div class="card-action">
-        <a href="/user/{{ author.id }}" class="">{{ author.local.email }}</a>
+        <a href="User/{{ artist.id }}" class="">{{ artist.local.email }}</a>
         <span class="upload__date">{{ createdAt }}</span>
       </div>
     </div>
   {{/each}}
-{{/if}} --}}
+{{/if}}

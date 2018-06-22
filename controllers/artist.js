@@ -1,4 +1,4 @@
-const artist = require("../models/Artist");
+const Artist = require("../models/Artist");
 module.exports = {
 	index: function (req, res) {
 		console.log("/");
@@ -27,7 +27,7 @@ module.exports = {
 	},
 	 update: function (req, res) {
 		console.log("artist/update");
-      res.redirect("Artist/edit");
+      res.redirect("Artist");
 	},
 	// 	// updating a to do in the database
 	

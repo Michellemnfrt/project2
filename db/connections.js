@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 if (process.env.NODE_ENV ==="production") {
-    mongoose.connectt(process.env.MLAB_URL)
+    mongoose.connect(process.env.MLAB_URL)
 } else {
-    mongoose.connect('mongodb://localhost/tweeter')
+    mongoose.connect('mongodb://localhost/project2')
 }
 mongoose.Promise = Promise;
 module.exports = mongoose;

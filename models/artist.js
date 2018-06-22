@@ -6,14 +6,8 @@ const Artist = new Schema({
     artist: {
         name: String
     },
-    title: {
-        type: String
-      },
-      Genre:[
-          { 
-          type: String,
-          enum: ['indie','rock','hip-hop','other']
-      }
-    ]
-  });
+    title: String,
+      genre: String,
+          
+  })
   module.exports = mongoose.model("Artist", Artist);

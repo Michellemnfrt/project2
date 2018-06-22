@@ -1,4 +1,4 @@
-const songs = require("../models/Songs");
+
 module.exports = {
     show: (req, res) => {
       res.render("Songs/show", { page: "Songs show page" });

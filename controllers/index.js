@@ -1,5 +1,5 @@
 module.exports = {
-    index: (req, res) => {
-      res.render("index", { page: "homepage" });
-    }
-  };
+  index: (req, res, next) => {
+    res.render("index", { page: "homepage" });
+  }
+};
