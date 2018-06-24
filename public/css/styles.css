@@ -1,5 +1,7 @@
 .nav-wrapper {
- 
+
+  position: relative;
+  display: inline-block;
     width: 90%;
     max-width: 800px;
     margin: 0;
@@ -10,3 +12,4 @@
     background-color: lightseagreen;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+  

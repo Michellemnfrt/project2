@@ -36,8 +36,31 @@ let Fru = User.create({
             user.songs.push(song);
           })
         ]).then(() => {
-          user.save(err => console.log(err));
+          User.save(err => console.log(err));
         });
+    });
+    let daffy = User.create({
+      local: {
+        email: "daffyduck@gmail.com",
+        password: createPassword("daffyduck")
+      }
+    }).then(user => {
+      Promise.all([
+        Songs.create({
+          content: "Who's this Duck Dodgers any how?",
+          author: user._id
+        }).then(Songs => {
+          user.songs.push(Songs);
+        }),
+        Songs.create({
+          content: "You're dethpicable.",
+          author: user._id
+        }).then(Songs => {
+          User.Songs.push(Songs);
+        })
+      ]).then(() => {
+        User.save(err => console.log(err));
+      });
     });
 
     let elmer = User.create({
@@ -46,28 +69,20 @@ let Fru = User.create({
         password: createPassword("elmerfudd")
       }
     }).then(user => {
-        user.save(err => console.log(err));
       Promise.all([
         Songs.create({
           content:
             "Shh. Be vewy vewy quiet. I'm hunting wabbits! Huh-huh-huh-huh!",
-            title: "Lefufru", 
-            artist: {
-              name:"inde"
-            },
-            genre: "indie",
-          }).then(song => {
-            user.songs.push(song);
-          }),
+          author: user._id
+        }).then(Songs => {
+          User.Songs.push(Songs);
+        }),
+
         Songs.create({
           content: "Kiww da wabbit!",
-            title: "Lefufru", 
-            artist: {
-              name:"inde"
-            },
-            genre:"indie",
-        }).then(song => {
-          user.songs.push(song);
+          author: user._id
+        }).then(Songs => {
+          User.Songs.push(Songs);
         })
       ]).then(() => {
         user.save(err => console.log(err));

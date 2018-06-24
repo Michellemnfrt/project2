@@ -16,7 +16,7 @@
           <ul class="right">
           {{#if currentUser}}
             <li><a href="/Songs/new">Add a new Song</a></li>
-            <li><a href="/User/{{currentUser.id}}">Profile</a></li>
+            <li><a href="/User/{{currentUser.name}}">Profile</a></li>
             <li><a href="/User/logout">Log Out</a></li>
           {{else}}
             <li><a href="User/login">Log In</a></li>

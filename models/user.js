@@ -1,6 +1,6 @@
-const mongoose =require('../db/connections')
+const mongoose =require('../db/connections');
 const bcrypt = require("bcrypt");
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const User = new Schema({
     local: {
@@ -21,5 +21,6 @@ const User = new Schema({
   User.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.local.password);
   };
+  
   module.exports =  mongoose.model("User", User);
   
