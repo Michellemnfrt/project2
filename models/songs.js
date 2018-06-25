@@ -8,5 +8,11 @@ const Songs = new Schema({
         name: String
       },
       genre: String,
-  });
+      author:
+      { type: Schema.Types.ObjectId, 
+        ref: 'User'
+      }
+    });
+  
   module.exports = mongoose.model("Songs", Songs);
+   
