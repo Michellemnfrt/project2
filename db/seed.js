@@ -1,7 +1,7 @@
 
-const Songs = require("../models/songs");
+const Songs = require("../models/Songs");
 const User = require("../models/User");
-const Artist = require("../models/artist");
+//  
 const bcrypt = require("bcrypt");
 
 const createPassword = password =>

@@ -2,8 +2,9 @@ const user = require("../models/User");
 const passport = require("passport");
 
 module.exports = {
-    show: (req, res) => {
-      user.findOne({ _id: req.params.id })
+  show: (req, res) => {
+    user
+      .findOne({ _id: req.params.id })
       .populate({
         path: "songs",
         options: { limit: 5, sort: { createdAt: -1 } }
@@ -11,20 +12,20 @@ module.exports = {
       .then(user => {
         res.render("User/show", { user });
       });
-    },
-    login: (req, res) => {
-      res.render("User/login", { message: req.flash("signupMessage") });
-    },
-    createLogin: (req, res) => {
-      const login = passport.authenticate("local-login", {
-        successRedirect: "/",
-        failureRedirect: "/login",
-        failureFlash: true
-      });
-      return login(req, res);
-     },
+  },
+  login: (req, res) => {
+    res.render("User/login", { message: req.flash("signupMessage") });
+  },
+  createLogin: (req, res) => {
+    const login = passport.authenticate("local-login", {
+      successRedirect: "/",
+      failureRedirect: "/login",
+      failureFlash: true
+    });
+    return login(req, res);
+  },
   Signup: (req, res) => {
-    res.render("User/signup", { user } );
+    res.render("User/signup", { user });
   },
   createSignup: (req, res) => {
     const signup = passport.authenticate("local-signup", {
@@ -39,6 +40,3 @@ module.exports = {
     res.redirect("/");
   }
 };
-
-   
-  
