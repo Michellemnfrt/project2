@@ -7,7 +7,7 @@ const User = new Schema({
     email: String,
     password: String
   },
-  tweets: [
+  songs: [
     {
       type: Schema.Types.ObjectId,
       ref: "Song"

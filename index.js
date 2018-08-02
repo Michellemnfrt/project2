@@ -18,7 +18,7 @@ app.use(methodOverride("_method"));
 app.use(
   session({
     secret: "EXPRESS-IS-AWESOME",
-    saveUninitialized: true,
+    saveUninitialized: false,
     resave: false
   })
 );

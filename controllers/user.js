@@ -25,16 +25,15 @@ module.exports = {
 
     return login(req, res);
   },
-  signUp: (req, res) => {
+  signUp: (req, res, next) => {
     res.render("user/signup", { message: req.flash("signupMessage") });
   },
   createSignUp: (req, res) => {
     const signup = passport.authenticate("local-signup", {
-      successRedirect: "/",
+      successRedirect: "/new",
       failureRedirect: "/signup",
       failureFlash: true
     });
-
     return signup(req, res);
   },
   logout: (req, res) => {

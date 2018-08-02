@@ -1,0 +1,11 @@
+<h1> Hello I'm at the update user page where u at?</h1>
+<section class="profile">
+    <h2>{{user.local.email}}</h2>
+    {{#if user.songs}}
+    <div class="songs">
+        {{#each user.songs}} {{> 'song'}} {{/each}}
+    </div>
+    {{else}}
+    <p>Please upload some song links</p>
+    {{/if}}
+</section>

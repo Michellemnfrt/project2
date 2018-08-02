@@ -1,11 +1,10 @@
-
 <section class="row">
-   {{#if message}}
-    <p class="alert">{{message}}</p>
+  {{#if message}}
+  <p class="alert">{{message}}</p>
   {{/if}}
 
-<h1> Hello I'm at the new songs page where u at?</h1>
-  <form action="/new" method="postt" class="auth-form">
+  <h1> Hello I'm at the new songs page where u at?</h1>
+  <form action="/song" method="POST" class="auth-form">
     <p class="input-field">
       <input type="email" name="email" placeholder="Email">
     </p>

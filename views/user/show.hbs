@@ -3,7 +3,7 @@
   <h2>{{user.local.email}}</h2>
   {{#if user.songs}}
   <div class="songs">
-    {{#each user.songs}} {{> 'song'}} {{/each}}
+    {{#each user.songs}} {{>'song'}} {{/each}}
   </div>
   {{else}}
   <p>Please upload some song links</p>
