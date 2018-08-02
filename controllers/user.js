@@ -30,11 +30,11 @@ module.exports = {
   },
   createSignUp: (req, res) => {
     const signup = passport.authenticate("local-signup", {
-      successRedirect: "/new",
+      successRedirect: "/",
       failureRedirect: "/signup",
       failureFlash: true
     });
-    return signup(req, res);
+    return signup(req, res, next);
   },
   logout: (req, res) => {
     req.logout();

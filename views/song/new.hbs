@@ -1,18 +1,15 @@
 <section class="row">
-  {{#if message}}
+  {{!-- {{#if message}}
   <p class="alert">{{message}}</p>
-  {{/if}}
+  {{/if}} --}}
 
   <h1> Hello I'm at the new songs page where u at?</h1>
-  <form action="/song" method="POST" class="auth-form">
+  <form action="/song" method="POST" class="song-form">
     <p class="input-field">
-      <input type="email" name="email" placeholder="Email">
+      <textarea name="song[content]" cols="30" rows="10" placeholder="Song"></textarea>
     </p>
     <p class="input-field">
-      <input type="password" name="password" placeholder="Password">
-    </p>
-    <p class="input-field">
-      <input type="submit" value="Log In" class="btn waves-effect waves-light">
+      <input type="submit" value="Song" class="btn waves-effect waves-light">
     </p>
   </form>
 </section>

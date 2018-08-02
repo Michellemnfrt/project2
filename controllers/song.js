@@ -19,22 +19,20 @@ module.exports = {
     // User.find({}).then(users => {
     //   console.log("/new");
     res.render("song/new");
-    //   { users });
-    // });
   },
   create: (req, res) => {
     Song.create({
       content: req.body.song.content,
       author: req.user._id
     }).then(song => {
-      user.songs.push(song);
-      user.save(err => {
+      req.user.songs.push(song);
+      req.user.save(err => {
         res.redirect(`song/${song._id}`);
       });
     });
   },
   update: (req, res) => {
-    let { content, author } = req.body;
+    let { content } = req.body;
     Song.findOne({ _id: req.body.id }).then(song => {
       song.comments.push({
         content,
