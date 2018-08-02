@@ -1,13 +1,13 @@
-const Songs = require("../models/Songs");
+const { Song } = require("../models/Song");
 
 module.exports = {
   index: (req, res) => {
-    Songs.find({})
+    Song.find({})
       .sort({ createdAt: -1 })
       .limit(10)
       .populate("author")
-      .then(Songs => {
-        res.render("Songs/index", { Songs });
+      .then(songs => {
+        res.render("partials/index", { songs });
       });
   }
 };

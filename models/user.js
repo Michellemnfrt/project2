@@ -1,5 +1,5 @@
-const mongoose = require("../db/connections");
-const bcrypt = require("bcrypt");
+const mongoose = require("../db/connection");
+const bcrypt = require("bcrypt-nodejs");
 const Schema = mongoose.Schema;
 
 const User = new Schema({
@@ -7,13 +7,14 @@ const User = new Schema({
     email: String,
     password: String
   },
-  songs: [
+  tweets: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Songs"
+      ref: "Song"
     }
   ]
 });
+
 User.methods.encrypt = function(password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };

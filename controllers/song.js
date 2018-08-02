@@ -1,6 +1,7 @@
-const Songs = require("../models/Songs");
+const { Song, Comment } = require("../models/Song");
+
 module.exports = {
-  show: (req, res, next) => {
+  show: (req, res) => {
     Song.findOne({ _id: req.params.id })
       .populate("author")
       .exec(function(err, song) {
@@ -9,46 +10,52 @@ module.exports = {
           comments
         ) {
           song.comments = comments;
-          console.log(songs);
+          console.log(song);
           res.render("song/show", song);
         });
       });
   },
   new: (req, res) => {
-    User.find({}).then(users => {
-      console.log("/new");
-      res.render("song/new", { users });
-    });
+    // User.find({}).then(users => {
+    //   console.log("/new");
+    res.render("song/new");
+    //   { users });
+    // });
   },
   create: (req, res) => {
     Song.create({
       content: req.body.song.content,
-      author: req.body.author
+      author: req.user._id
     }).then(song => {
-      Songs.findOne({ _id: req.body.id }).then(user => {
-        user.songs.push(song);
-        user.save(err => {
-          res.redirect(`/Songs/${song._id}`);
-        });
+      user.songs.push(song);
+      user.save(err => {
+        res.redirect(`song/${song._id}`);
       });
     });
   },
   update: (req, res) => {
     let { content, author } = req.body;
-    Songs.findOne({ _id: req.body.id }).then(song => {
+    Song.findOne({ _id: req.body.id }).then(song => {
       song.comments.push({
         content,
-        author
+        author: req.user._id
       });
       song.save(err => {
-        res.redirect(`/Songs/${songs._id}`);
+        res.redirect(`/song/${song._id}`);
       });
     });
   },
   delete: (req, res) => {
-    Song.findOneAndRemove({ _id: req.params.id }).then(tweet => {
+    Song.findOneAndRemove({ _id: req.params.id }).then(song => {
       res.redirect("/");
     });
+  },
+  requireAuth: function(req, res, next) {
+    if (req.isAuthenticated()) {
+      next();
+    } else {
+      res.redirect("/");
+    }
   }
 };
 

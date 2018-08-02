@@ -1,33 +1,46 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Muzic Sha.ree</title>
-    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> --}}
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo right">Muzic Sha.ree</a>
-          <ul class="right">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Muzic Sha.ree</title>
+  {{!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> --}}
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo right">Muzic Sha.ree</a>
+        <ul class="right">
           {{#if currentUser}}
-            <li><a href="/Songs/new">Add a new Song</a></li>
-            <li><a href="/User/{{currentUser.name}}">Profile</a></li>
-            <li><a href="/User/logout">Log Out</a></li>
+          <li>
+            <a href="/song/new">Add a new Song</a>
+          </li>
+          <li>
+            <a href="/user/{{currentUser.name}}">Profile</a>
+          </li>
+          <li>
+            <a href="/user/logout">Log Out</a>
+          </li>
           {{else}}
-            <li><a href="User/login">Log In</a></li>
-            <li><a href="User/Signup">Sign Up</a></li>
+          <li>
+            <a href="user/login">Log In</a>
+          </li>
+          <li>
+            <a href="/user/sign-up">Sign Up</a>
+          </li>
           {{/if}}
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="container">
-      {{{ body }}}
-    </main>
-  </body>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {{{ body }}}
+  </main>
+</body>
+
 </html>
