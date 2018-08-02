@@ -34,7 +34,7 @@ module.exports = {
       failureRedirect: "/signup",
       failureFlash: true
     });
-    return signup(req, res, next);
+    return signup(req, res);
   },
   logout: (req, res) => {
     req.logout();
