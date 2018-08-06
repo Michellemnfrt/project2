@@ -31,6 +31,11 @@ module.exports = {
       });
     });
   },
+  edit: function(req, res) {
+    // rendering the form to update an existing to do
+    console.log("artist/update");
+    res.redirect("Artist/edit");
+  },
   update: (req, res) => {
     let { content } = req.body;
     Song.findOne({ _id: req.body.id }).then(song => {
