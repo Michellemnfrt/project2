@@ -1,1 +1,12 @@
 <h1> Hello I'm at the songs edit page where u at?</h1>
+
+<h2>Edit This Song:</h2>
+
+<form action="/{{this.id}}?_method=put" method="post" class="edit-form">
+    <p class="input-field">
+        <textarea name="song[content]" value="{{this.title}}" cols="30" rows="10" placeholder="Song"></textarea>
+    </p>
+    <p class="input-field">
+        <input type="submit" value="Song" class="btn waves-effect waves-light">
+    </p>
+</form>

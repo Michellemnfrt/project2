@@ -9,7 +9,7 @@ module.exports = {
           err,
           comments
         ) {
-          console.log("comments are equL TO " + comments);
+          // console.log("comments are equL TO " + comments);
           song.comments = comments;
           // console.log("the showpage is equal to " + song);
           res.render("song/show", song);
@@ -26,7 +26,7 @@ module.exports = {
       author: req.user._id
     }).then(song => {
       req.user.songs.push(song);
-      console.log(req.user.songs);
+      // console.log(req.user.songs);
       req.user.save(err => {
         res.redirect(`song/${song._id}`);
       });
@@ -39,12 +39,10 @@ module.exports = {
       author: req.user._id
     }).then(comment => {
       // console.log("the comment is equal to" + comment);
-      console.log("the req is equal to " + req);
-      console.log("req.params.id is equal to " + req.params.id);
+      // console.log("the req is equal to " + req);
+      // console.log("req.params.id is equal to " + req.params.id);
 
-      // req.user.Comments.push(comment);
       comment.save(err => {
-        // let urlId = something
         res.redirect(`/song/${req.params.id}`);
       });
     });
@@ -55,11 +53,11 @@ module.exports = {
   //   console.log("/update");
   //   res.redirect(`song/${song._id}`);
   // },
-  // edit: function(req, res, next) {
-  //   // rendering the form to update an existing to do
-  //   console.log("songs/edit");
-  //   res.render("Songs/edit", { page: "Songs edit page" });
-  // },
+  edit: function(req, res) {
+    // rendering the form to update an existing to do
+    console.log("song/edit");
+    res.render("Song/edit", { page: "Songs edit page" });
+  },
 
   update: (req, res) => {
     let { content } = req.body;
