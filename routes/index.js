@@ -26,7 +26,7 @@ router.use((req, res, next) => {
 router.use("/", require("./application.js"));
 router.use("/user", require("./user"));
 router.use("/song", require("./song"));
-router.post("/user", require("./user"));
+// router.post("/user", require("./user"));
 
 router.all("*", (req, res) => {
   res.status(400).send();

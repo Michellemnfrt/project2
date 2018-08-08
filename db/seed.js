@@ -1,4 +1,4 @@
-const Songs = require("../models/Song");
+const Song = require("../models/Song");
 const User = require("../models/User");
 const bcrypt = require("bcrypt-nodejs");
 
@@ -59,7 +59,7 @@ User.find({}).remove(() => {
         }).then(song => {
           user.songs.push(song);
         }),
-        Songs.create({
+        Song.create({
           content: "You're dethpicable.",
           // title: "inde",
           // artist: {
