@@ -1,15 +1,12 @@
 .nav-wrapper {
-
-  position: relative;
-  display: inline-block;
-    width: 90%;
-    max-width: 800px;
-    margin: 0;
-  }
-  .p{
-    font-size: 27em;
-    text-decoration: blueviolet;
-    background-color: lightseagreen;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* .p {
+  font-size: 27em;
+  text-decoration: blueviolet;
+  background-color: lightseagreen;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+} */

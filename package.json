@@ -2,7 +2,7 @@
   "name": "project2",
   "version": "1.0.0",
   "description": "This app allows users to upload links of music they want to share on their profile.  Users are able to... Create personal profile(login) Upload music Edit Music Classify music by artists View other profiles Comment on songs Download music from other profiles.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -22,6 +23,7 @@
     "flash": "^1.1.0",
     "handlebars": "^4.0.11",
     "hbs": "^4.0.1",
+    "install": "^0.12.1",
     "method-override": "^2.3.10",
     "methods": "^1.1.2",
     "mongodb": "^3.0.10",

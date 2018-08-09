@@ -2,19 +2,16 @@
 <p class="card">
   {{> 'song'}}
 </p>
-
-{{#if artist.length}}
-  {{#each artist}}
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">
-          {{ content }}
-        </span>
-      </div>
-      <div class="card-action">
-        <a href="/user/{{id }}" class="">{{ user.local.email }}</a>
-        <span class="upload__date">{{ createdAt }}</span>
-      </div>
-    </div>
-  {{/each}}
-{{/if}}
+{{#if artist.length}} {{#each artist}}
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">
+      {{ content }}
+    </span>
+  </div>
+  <div class="card-action">
+    <a href="/user/{{id }}" class="">{{ user.local.email }}</a>
+    <span class="upload__date">{{ createdAt }}</span>
+  </div>
+</div>
+{{/each}} {{/if}}

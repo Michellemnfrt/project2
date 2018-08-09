@@ -1,7 +1,7 @@
-var LocalStrategy = require('passport-local').Strategy;
-var User = require('../models/User');
+const LocalStrategy = require("passport-local").Strategy;
+const User = require("../models/User");
 
-module.exports = function (passport) {
+module.exports = function(passport) {
   passport.serializeUser(function(user, callback) {
     callback(null, user.id);
   });
@@ -12,15 +12,18 @@ module.exports = function (passport) {
     });
   });
 
-  passport.use('local-Signup', new LocalStrategy({   
+  passport.use(
+    "local-signup",
+    new LocalStrategy(
+      {
         usernameField: "email",
         passwordField: "password",
         passReqToCallback: true
       },
       function(req, email, password, callback) {
         User.findOne({ "local.email": email })
-          .then(User => {
-            if (User) {
+          .then(user => {
+            if (user) {
               return callback(
                 null,
                 false,
@@ -54,21 +57,21 @@ module.exports = function (passport) {
         User.findOne({ "local.email": email }, function(err, user) {
           if (err) return callback(err);
 
-          if (!User) {
+          if (!user) {
             return callback(
               null,
               false,
               req.flash("loginMessage", "No user found")
             );
           }
-          if (!User.validPassword(password)) {
+          if (!user.validPassword(password)) {
             return callback(
               null,
               false,
               req.flash("loginMessage", "Ooops, wrong password")
             );
           }
-          return callback(null, User);
+          return callback(null, user);
         });
       }
     )

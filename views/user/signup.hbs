@@ -1,8 +1,13 @@
 <h1> Hello I'm at the new user page where u at?</h1>
 <section class="row">
-  <h4>Create User:</h4>
+  ]
+  <h4>Sign Up:</h4>
 
-  <form action='/User/Signup' method="get" class="auth-form">
+  {{#if message}}
+  <p class="alert">{{message}}</p>
+  {{/if}}
+
+  <form action="" method="POST" class="auth-form">
     <p class="input-field">
       <input type="email" name="email" placeholder="Email">
     </p>
@@ -10,7 +15,7 @@
       <input type="password" name="password" placeholder="Password">
     </p>
     <p class="input-field">
-      <input type="submit" value="Sign-Up" class="btn">
+      <input type="submit" value="Sign-Up" class="btn waves-effect waves-light">
     </p>
   </form>
 </section>
