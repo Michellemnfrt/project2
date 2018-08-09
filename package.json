@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": " node index.js",
+    "start": "node index.js",
     "devstart": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,8 +29,8 @@
     "flash": "^1.1.0",
     "handlebars": "^4.0.11",
     "hbs": "^4.0.1",
-    "method-override": "^2.3.10",
     "methods": "^1.1.2",
+    "method-override": "^2.3.10",
     "mongodb": "^3.0.10",
     "mongoose": "^5.1.6",
     "passport": "^0.4.0",
