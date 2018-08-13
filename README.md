@@ -45,3 +45,7 @@ Users can contribute to this code, identify bugs, and propose improvements by cr
 ## Main profile can be found at
 
 https://git.generalassemb.ly/Michellemnfrt
+
+## Deployed Project can be found at
+
+https://secure-ocean-88515.herokuapp.com/
