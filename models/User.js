@@ -2,8 +2,6 @@ const mongoose = require("../db/connection");
 const bcrypt = require("bcrypt-nodejs");
 const Schema = mongoose.Schema;
 
-//will this change the name?
-
 const User = new Schema({
   local: {
     email: String,
