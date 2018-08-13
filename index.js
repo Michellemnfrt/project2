@@ -28,9 +28,9 @@ app.use(passport.session());
 
 app.use(require("./routes/index.js"));
 
-app.set("port", process.env.PORT || 8000);
+var port = process.env.PORT || 8000;
 
-app.listen(8000, () =>
+app.listen(port, () =>
   console.log(
     `Welcome to the party we are cooking up some code on ${app.get("port")}`
   )
